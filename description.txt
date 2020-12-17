@@ -1,0 +1,18 @@
+Input:
+all parameters of the game are defined in main() (see main.cpp). 
+Sigma function is defined in NCG.h, distNCG::sigma()
+More details and comments see in the code or in the paper.
+
+Output:
+Let's assume sigma(x)=alpha*x^beta. 
+Then the result contains four files: 
+1. main dot file named GE_<number of players>_n_<alpha>_alpha_<beta>_beta_PSN_from_<initial network type>_<random or round-robing activation>_BR_global_<average clustering coefficient>_avg_clust_<network diameter>_D
+2. <number of players>_n_<alpha>_alpha_<beta>_beta_PSN_from_<initial network type>_<random or round-robing activation>_BR_edge_distribution.dot contains the edge-costs distribution 
+3. <number of players>_n_<alpha>_alpha_<beta>_beta_PSN_from_<initial network type>_<random or round-robing activation>_BR_deg_distribution.dot contains the degree distribution 
+4. <number of players>_n_<alpha>_alpha_<beta>_beta_PSN_from_<initial network type>_<random or round-robing activation>_BR_node_deg_local_CC.dot contains the degree and the local clustering of each node 
+
+This code was written for a more general setting. Hence, you can see the classes' hierarchy and some extra features that you probably don't need for computing a pairwise stable network.
+For the distNCG, first, you need Dynamic_W_graph class with its parent class Graph. 
+It is our implementation of a graph structure. 
+Second, you need class distNCG (with its parent class Game), 
+which is our implementation of the game with all necessary algorithms, including the algorithm computing pairwise stable networks by a sequence agents' best responses. 
